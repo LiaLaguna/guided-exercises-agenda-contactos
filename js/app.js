@@ -4,14 +4,14 @@ var $nameInput = $('#name-input');
 var $phoneInput = $('#phone-input');
 
 
-  var loadPage = function () {
+  function loadPage() {
     $('.modal').modal();
     $nameInput.keyup(validateContact);
     $phoneInput.keyup(validateContact);
 
   };
 
-  var validateContact = function () {
+  function validateContact() {
     //En esta funcion tenemos que validar que el usuario ingrese datos y no valores vacios
     var $containerAddContact = $('#add-contact');
     if ($(this).val().trim().length > 0){
@@ -21,7 +21,7 @@ var $phoneInput = $('#phone-input');
     }
   };
 
-  var paintContactsInHTML = function(contact) {
+  function paintContactsInHTML(contact) {
 
     /* Crear elementos con DOM html al publicar contacto */
 
@@ -36,7 +36,7 @@ var $phoneInput = $('#phone-input');
 
   };
 
-  var addContact = function (e) {
+  function addContact(e) {
     e.preventDefault();
     //Las siguientes lineas toman el valor que el usuario agrega en los inputs y los guardan en variables
 
@@ -52,22 +52,13 @@ var $phoneInput = $('#phone-input');
 
   };
 
-
-
-
-
-
-  var filterContacts = function() {
+  function filterContacts() {
     //Esta funcion debe de filtrar la data segun el valor que el usuario ingrese en el input de busqueda
   };
 
-
-  var removeContact = function () {
+  function removeContact() {
     //esta funcion como primer alcance debe de poer borrar la tarjeta que se crea desde el DOM
     //como segundo alcance borrar el elemento de la data
   };
-
-
-
 
   $(document).ready(loadPage);
